@@ -1,0 +1,21 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#059669"/>
+  <rect x="20" y="20" width="360" height="210" fill="#064E3B" rx="8"/>
+  <rect x="40" y="40" width="320" height="30" fill="#10B981" rx="4"/>
+  <text x="200" y="60" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="16" font-weight="bold">FitBuddy</text>
+  <circle cx="120" cy="120" r="30" fill="#34D399" opacity="0.3"/>
+  <circle cx="120" cy="120" r="20" fill="#6EE7B7" opacity="0.6"/>
+  <circle cx="120" cy="120" r="8" fill="#A7F3D0"/>
+  <rect x="180" y="100" width="180" height="40" fill="#065F46" rx="4"/>
+  <rect x="190" y="110" width="160" height="8" fill="#10B981" rx="2"/>
+  <rect x="190" y="125" width="120" height="6" fill="#6EE7B7" rx="2"/>
+  <rect x="40" y="160" width="100" height="60" fill="#065F46" rx="4"/>
+  <rect x="160" y="160" width="100" height="60" fill="#065F46" rx="4"/>
+  <rect x="280" y="160" width="80" height="60" fill="#065F46" rx="4"/>
+  <rect x="50" y="180" width="80" height="8" fill="#10B981" rx="2"/>
+  <rect x="170" y="180" width="80" height="8" fill="#10B981" rx="2"/>
+  <rect x="290" y="180" width="60" height="8" fill="#10B981" rx="2"/>
+  <text x="90" y="200" text-anchor="middle" fill="#6EE7B7" font-family="Arial" font-size="10">Workout</text>
+  <text x="210" y="200" text-anchor="middle" fill="#6EE7B7" font-family="Arial" font-size="10">Progress</text>
+  <text x="320" y="200" text-anchor="middle" fill="#6EE7B7" font-family="Arial" font-size="10">Goals</text>
+</svg>

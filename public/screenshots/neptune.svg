@@ -1,0 +1,17 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#0F172A"/>
+  <rect x="20" y="20" width="360" height="210" fill="#1E293B" rx="8"/>
+  <rect x="40" y="40" width="320" height="40" fill="#3B82F6" rx="4"/>
+  <text x="200" y="65" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="16" font-weight="bold">NEPTUNE</text>
+  <rect x="40" y="100" width="100" height="80" fill="#1E40AF" rx="4"/>
+  <rect x="160" y="100" width="100" height="80" fill="#1E40AF" rx="4"/>
+  <rect x="280" y="100" width="80" height="80" fill="#1E40AF" rx="4"/>
+  <rect x="50" y="120" width="80" height="15" fill="#60A5FA" rx="2"/>
+  <rect x="50" y="145" width="60" height="10" fill="#93C5FD" rx="2"/>
+  <rect x="170" y="120" width="80" height="15" fill="#60A5FA" rx="2"/>
+  <rect x="170" y="145" width="60" height="10" fill="#93C5FD" rx="2"/>
+  <rect x="290" y="120" width="60" height="15" fill="#60A5FA" rx="2"/>
+  <rect x="290" y="145" width="40" height="10" fill="#93C5FD" rx="2"/>
+  <rect x="40" y="200" width="320" height="20" fill="#374151" rx="2"/>
+  <text x="200" y="215" text-anchor="middle" fill="#9CA3AF" font-family="Arial" font-size="12">Competitive Programming Platform</text>
+</svg>
