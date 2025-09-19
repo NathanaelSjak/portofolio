@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ScrollAnimation from "../components/ScrollAnimation";
-import SkillProgression from "../components/SkillProgression";
+import FloatingSocialIcons from "../components/FloatingSocialIcons";
 import "../App.css";
 
 const Experience = () => {
@@ -70,69 +70,6 @@ const Experience = () => {
     },
   ];
 
-  const skills = [
-    {
-      category: "Frontend",
-      items: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "TypeScript",
-        "HTML5",
-        "CSS3",
-        "Tailwind CSS",
-      ],
-    },
-    {
-      category: "Backend",
-      items: [
-        "Go",
-        "Python",
-        "Node.js",
-        "REST APIs",
-        "GraphQL",
-        "Microservices",
-      ],
-    },
-    {
-      category: "Mobile",
-      items: ["Kotlin", "Jetpack Compose", "Android Studio", "XML", "Firebase"],
-    },
-    {
-      category: "Database",
-      items: [
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Database Design",
-        "Query Optimization",
-      ],
-    },
-    {
-      category: "ML/AI",
-      items: [
-        "Python",
-        "scikit-learn",
-        "TensorFlow",
-        "NLP",
-        "Data Analysis",
-        "Model Training",
-      ],
-    },
-    {
-      category: "Tools",
-      items: [
-        "Git",
-        "Docker",
-        "Linux",
-        "VSCode",
-        "Figma",
-        "Postman",
-        "Railway",
-      ],
-    },
-  ];
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -177,104 +114,79 @@ const Experience = () => {
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="container"
-      style={{ paddingTop: "100px", minHeight: "100vh" }}
-    >
-      <motion.section className="section" variants={itemVariants}>
-        <h1>Experience & Skills</h1>
-        <p className="lead">
-          My journey in software development, from lab assistant to fullstack
-          developer.
-        </p>
-      </motion.section>
+    <>
+      <FloatingSocialIcons />
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="container"
+        style={{ paddingTop: "100px", minHeight: "100vh" }}
+      >
+        <motion.section className="section" variants={itemVariants}>
+          <h1>Experience & Skills</h1>
+          <p className="lead">
+            My journey in software development, from lab assistant to fullstack
+            developer.
+          </p>
+        </motion.section>
 
-      <motion.section className="section" variants={itemVariants}>
-        <h2>Work Experience</h2>
-        <div className="experience-timeline">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              className={`experience-item ${exp.type}`}
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <div className="experience-header">
-                <h3>{exp.title}</h3>
-                <div className="experience-meta">
-                  <span className="company">{exp.company}</span>
-                  <span className="period">{exp.period}</span>
-                </div>
-              </div>
-              <p className="experience-description">{exp.description}</p>
-              <div className="experience-skills">
-                {exp.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-
-      <ScrollAnimation animation="fadeUp" delay={0.2}>
-        <SkillProgression />
-      </ScrollAnimation>
-
-      <motion.section className="section" variants={itemVariants}>
-        <h2>Technical Skills</h2>
-        <div className="skills-grid">
-          {skills.map((skillGroup, index) => (
-            <ScrollAnimation key={index} animation="scale" delay={index * 0.1}>
+        <motion.section className="section" variants={itemVariants}>
+          <h2>Work Experience</h2>
+          <div className="experience-timeline">
+            {experiences.map((exp, index) => (
               <motion.div
-                className="skill-category"
+                key={index}
+                className={`experience-item ${exp.type}`}
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3>{skillGroup.category}</h3>
-                <div className="skill-items">
-                  {skillGroup.items.map((skill, skillIndex) => (
-                    <span key={skillIndex} className="skill-item">
+                <div className="experience-header">
+                  <h3>{exp.title}</h3>
+                  <div className="experience-meta">
+                    <span className="company">{exp.company}</span>
+                    <span className="period">{exp.period}</span>
+                  </div>
+                </div>
+                <p className="experience-description">{exp.description}</p>
+                <div className="experience-skills">
+                  {exp.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className="skill-tag">
                       {skill}
                     </span>
                   ))}
                 </div>
               </motion.div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </motion.section>
+            ))}
+          </div>
+        </motion.section>
 
-      <motion.section className="section" variants={itemVariants}>
-        <h2>Education</h2>
-        <motion.div
-          className="education-card"
-          variants={cardVariants}
-          whileHover="hover"
-        >
-          <div className="education-header">
-            <h3>Computer Science</h3>
-            <div className="education-meta">
-              <span className="institution">BINUS University</span>
-              <span className="period">2023 - 2027</span>
+        <motion.section className="section" variants={itemVariants}>
+          <h2>Education</h2>
+          <motion.div
+            className="education-card"
+            variants={cardVariants}
+            whileHover="hover"
+          >
+            <div className="education-header">
+              <h3>Computer Science</h3>
+              <div className="education-meta">
+                <span className="institution">BINUS University</span>
+                <span className="period">2023 - 2027</span>
+              </div>
             </div>
-          </div>
-          <p>
-            Pursuing Bachelor's degree in Computer Science with focus on
-            software engineering, machine learning, and mobile development.
-            Active in competitive programming and student organizations.
-          </p>
-          <div className="education-highlights">
-            <span className="highlight">GPA: 3.34/4.0</span>
-          </div>
-        </motion.div>
-      </motion.section>
-    </motion.div>
+            <p>
+              Pursuing Bachelor's degree in Computer Science with focus on
+              software engineering, machine learning, and mobile development.
+              Active in competitive programming and student organizations.
+            </p>
+            <div className="education-highlights">
+              <span className="highlight">GPA: 3.34/4.0</span>
+            </div>
+          </motion.div>
+        </motion.section>
+      </motion.div>
+    </>
   );
 };
 

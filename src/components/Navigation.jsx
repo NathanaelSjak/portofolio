@@ -34,8 +34,8 @@ const Navigation = ({ theme, setTheme }) => {
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/projects", label: "Project" },
     { path: "/experience", label: "Experience" },
-    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -45,26 +45,36 @@ const Navigation = ({ theme, setTheme }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="nav container">
-          <motion.div className="brand" variants={itemVariants}>
-            <Link to="/">Nathanael Sjaklif</Link>
-            <div>
-              <small>Lab Assistant — SLC BINUS University</small>
-            </div>
-          </motion.div>
-          <motion.nav className="nav-right" variants={itemVariants}>
+        <div className="nav-container">
+          <motion.nav className="nav-pill" variants={itemVariants}>
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={location.pathname === item.path ? "active" : ""}
+                className={`nav-item ${
+                  location.pathname === item.path ? "active" : ""
+                }`}
               >
                 {item.label}
+                {location.pathname === item.path && (
+                  <motion.div
+                    className="nav-indicator"
+                    layoutId="nav-indicator"
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  />
+                )}
               </Link>
             ))}
-            <a href="/Nathanael_Sjaklif_Resume.pdf" download>
+            <a
+              href="/Nathanael_Sjaklif_Resume.pdf"
+              download
+              className="nav-item resume-item"
+            >
               Resume
             </a>
+          </motion.nav>
+
+          <motion.div className="nav-controls" variants={itemVariants}>
             <motion.span
               className="toggle"
               onClick={() =>
@@ -83,7 +93,7 @@ const Navigation = ({ theme, setTheme }) => {
               </motion.span>
               {theme === "light" ? "Light" : "Dark"}
             </motion.span>
-          </motion.nav>
+          </motion.div>
         </div>
       </motion.header>
 

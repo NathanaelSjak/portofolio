@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navigation from "./components/Navigation";
+import PageWaveTransition from "./components/PageWaveTransition";
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
-import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import CursorBlob from "./components/CursorBlob";
 
@@ -56,7 +57,24 @@ function App() {
 
   return (
     <Router>
+      <PageWaveTransition />
       <CursorBlob />
+
+      {/* Background elements */}
+      <div className="floating-particles">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
+
+      <div className="grid-overlay"></div>
+
       <motion.div
         initial="hidden"
         animate="visible"
@@ -67,8 +85,8 @@ function App() {
         <main className="container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 

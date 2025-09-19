@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollAnimation from "../components/ScrollAnimation";
 import "../App.css";
 
-const Contact = () => {
+const About = () => {
   const socialLinks = [
     {
       name: "Email",
@@ -57,107 +58,166 @@ const Contact = () => {
     },
   };
 
-  const blobVariants = {
-    hidden: { scale: 0, rotate: -180 },
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
     visible: {
+      opacity: 1,
       scale: 1,
-      rotate: 0,
       transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
+        duration: 0.4,
+        ease: "easeOut",
       },
     },
     hover: {
-      scale: 1.1,
-      rotate: 5,
+      scale: 1.05,
+      y: -5,
       transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
+        duration: 0.2,
+        ease: "easeInOut",
       },
     },
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="container"
-      style={{ paddingTop: "100px", minHeight: "100vh" }}
-    >
-      <motion.section className="section" variants={itemVariants}>
-        <h1>Let's Connect</h1>
-        <p className="lead">
-          Have an opportunity, question, or just want to chat? I'd love to hear
-          from you.
-        </p>
-      </motion.section>
-
-      <motion.section className="section" variants={itemVariants}>
-        <div className="contact-blobs">
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              target={
-                link.name !== "Email" && link.name !== "Location"
-                  ? "_blank"
-                  : undefined
-              }
-              rel={
-                link.name !== "Email" && link.name !== "Location"
-                  ? "noreferrer"
-                  : undefined
-              }
-              className="social-blob"
-              variants={blobVariants}
-              whileHover="hover"
-              style={{ background: link.color }}
-            >
-              <div className="blob-content">
-                <div className="blob-icon">
-                  <img src={link.icon} alt={link.name} />
-                </div>
-                <div className="blob-text">
-                  <h3>{link.name}</h3>
-                  <p>{link.description}</p>
-                </div>
-              </div>
-              <div className="blob-shape"></div>
-            </motion.a>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section className="section" variants={itemVariants}>
-        <div className="contact-info-card">
-          <h2>Get in Touch</h2>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+      <ScrollAnimation animation="fadeUp" delay={0.1}>
+        <section className="hero">
+          <h1>About Me</h1>
           <p>
-            I'm always interested in new opportunities, collaborations, and
-            interesting projects. Whether you have a question about my work,
-            want to discuss a potential project, or just want to say hello, feel
-            free to reach out!
+            Passionate developer combining technology with hands-on
+            problem-solving to support academic communities and create
+            meaningful solutions.
           </p>
-          <div className="contact-stats">
-            <div className="stat">
-              <span className="stat-number">24h</span>
-              <span className="stat-label">Response Time</span>
+        </section>
+      </ScrollAnimation>
+
+      <ScrollAnimation animation="fadeUp" delay={0.2}>
+        <section className="section">
+          <div className="about-content">
+            <div className="about-text">
+              <h2>My Journey</h2>
+              <p>
+                As a Junior Laboratory Assistant at BINUS University, I combine
+                my passion for technology with hands-on problem-solving to
+                support our academic community. My role involves leveraging a
+                diverse skill set—including Node.js, OOP, Go, Python, SQL, and
+                cloud technologies—to develop practical solutions that enhance
+                learning and research.
+              </p>
+              <p>
+                Currently pursuing my Computer Science degree (expected 2027),
+                I'm committed to merging theoretical knowledge with real-world
+                applications—whether through assisting students, optimizing lab
+                tools, or contributing to open-source projects.
+              </p>
             </div>
-            <div className="stat">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Available</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">Remote</span>
-              <span className="stat-label">Work Ready</span>
+
+            <div className="about-highlights">
+              <ScrollAnimation animation="scale" delay={0.3}>
+                <motion.div
+                  className="highlight-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <h3>🎓 Education</h3>
+                  <p>Computer Science Student at BINUS University</p>
+                  <span className="highlight-year">Expected 2027</span>
+                </motion.div>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="scale" delay={0.4}>
+                <motion.div
+                  className="highlight-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <h3>💼 Current Role</h3>
+                  <p>Junior Laboratory Assistant</p>
+                  <span className="highlight-location">BINUS University</span>
+                </motion.div>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="scale" delay={0.5}>
+                <motion.div
+                  className="highlight-card"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <h3>🚀 Focus Areas</h3>
+                  <p>Full-stack Development, Android Apps, Machine Learning</p>
+                  <span className="highlight-tech">Web • Mobile • ML</span>
+                </motion.div>
+              </ScrollAnimation>
             </div>
           </div>
-        </div>
-      </motion.section>
+        </section>
+      </ScrollAnimation>
+
+      <ScrollAnimation animation="fadeUp" delay={0.3}>
+        <section className="section">
+          <h2>Let's Connect</h2>
+          <p className="lead">
+            I'm always interested in new opportunities and collaborations.
+          </p>
+          <div className="contact-blobs">
+            {socialLinks.map((social, index) => (
+              <ScrollAnimation
+                key={social.name}
+                animation="scale"
+                delay={index * 0.1}
+              >
+                <motion.a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-blob"
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <div className="blob-content">
+                    <div className="blob-icon">
+                      <img src={social.icon} alt={social.name} />
+                    </div>
+                    <div className="blob-text">
+                      <h3>{social.name}</h3>
+                      <p>{social.description}</p>
+                    </div>
+                  </div>
+                  <div className="blob-shape"></div>
+                </motion.a>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </section>
+      </ScrollAnimation>
+
+      <ScrollAnimation animation="fadeUp" delay={0.4}>
+        <section className="section">
+          <div className="contact-info-card">
+            <h2>Quick Stats</h2>
+            <div className="contact-stats">
+              <div className="stat">
+                <span className="stat-number">7+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">3+</span>
+                <span className="stat-label">Years Learning</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">5+</span>
+                <span className="stat-label">Technologies</span>
+              </div>
+            </div>
+            <p>
+              Always excited to discuss new projects, collaborations, or just
+              chat about technology!
+            </p>
+          </div>
+        </section>
+      </ScrollAnimation>
     </motion.div>
   );
 };
 
-export default Contact;
+export default About;
