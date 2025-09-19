@@ -8,7 +8,6 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import CursorBlob from "./components/CursorBlob";
-import PageTransition from "./components/PageTransition";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -66,13 +65,11 @@ function App() {
         <Navigation theme={theme} setTheme={setTheme} />
 
         <main className="container">
-          <PageTransition>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </PageTransition>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </main>
 
         <motion.footer
